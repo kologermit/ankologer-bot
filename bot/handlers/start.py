@@ -111,7 +111,7 @@ async def callback(c: types.CallbackQuery):
         "price": p.price,
         "quantity": 1,
         "sku": p.price
-    }, p.description, c.from_user)
+    }, p.description, c.from_user, p.url)
     await c.message.answer(f"<b>{p.name}</b>", reply_markup=types.InlineKeyboardMarkup(1).add(
         types.InlineKeyboardButton("Ссылка на оплату", url=url)
     ))
