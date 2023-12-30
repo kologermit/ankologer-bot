@@ -10,6 +10,13 @@ from db.models import Users, Messages
 from db.logic import get_user
 from logger import log_message
 
+@dp.message_handler(commands=['start', 'restart'])
+async def handler(m: types.Message):
+    user = await get_user(m)
+    log_message(m, user.state)
+    await start(user, m)
+    await user.save()
+
 @dp.message_handler(commands=['menu'])
 async def handler(m: types.Message):
     user = await get_user(m)

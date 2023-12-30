@@ -20,6 +20,6 @@ class Messages(Model):
 class Products(Model):
     id = fields.IntField(pk=True)
     name = fields.CharField(max_length=100)
-    description = fields.CharField(max_length=1000)
+    description = fields.CharField(max_length=2000)
     price = fields.IntField()
     url = fields.CharField(max_length=100)
