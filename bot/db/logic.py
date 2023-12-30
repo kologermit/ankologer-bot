@@ -1,5 +1,5 @@
 from aiogram import types
-from .models import Users
+from .models import Users, Products
 
 async def get_user(m: types.Message) -> Users:
     user = await Users.filter(tg_id=m.from_user.id).all()
@@ -15,3 +15,6 @@ async def get_user(m: types.Message) -> Users:
     else:
         user = user[0]
     return user
+
+async def get_products():
+    return await Products.filter().all()

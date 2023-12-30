@@ -22,4 +22,4 @@ class Products(Model):
     name = fields.CharField(max_length=100)
     description = fields.CharField(max_length=1000)
     price = fields.IntField()
-
+    url = fields.CharField(max_length=100)

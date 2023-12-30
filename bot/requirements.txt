@@ -3,3 +3,4 @@ tortoise-orm
 requests
 prodamuspy
 phonenumbers
+openpyxl

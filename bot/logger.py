@@ -29,5 +29,5 @@ def log_message(m: types.Message, state: str = ""):
         user_name=m.from_user.full_name,
         username=m.from_user.username,
         state=state,
-        text=m.text
+        text=str(m.text)
     ))
