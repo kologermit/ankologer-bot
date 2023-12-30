@@ -2,8 +2,8 @@ from aiogram import types
 import logging
 
 from .dispatcher import dp
-from .start import start
-from .registration import registration_name
+from .start import start, start_presentation, menu
+from .registration import registration_name, registration_email, registration_phone
 from db.models import Users, Messages
 from db.logic import get_user
 from logger import log_message
@@ -20,7 +20,11 @@ async def handler(m: types.Message):
     )
     states = {
         "start": start,
-        "registration:name": registration_name
+        "start:presentation": start_presentation,
+        "registration:name": registration_name,
+        "registration:email": registration_email,
+        "registration:phone": registration_phone,
+        "menu": menu
     }
     try:
         if states.get(user.state) is None:

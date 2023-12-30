@@ -17,3 +17,9 @@ class Messages(Model):
     user_id = fields.IntField()
     user_tg_id = fields.IntField()
 
+class Products(Model):
+    id = fields.IntField(pk=True)
+    name = fields.CharField(max_length=100)
+    description = fields.CharField(max_length=1000)
+    price = fields.IntField()
+
