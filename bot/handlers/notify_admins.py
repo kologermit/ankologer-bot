@@ -1,5 +1,5 @@
 from config import admins
-from dispatcher import dp
+from .dispatcher import dp
 import logging
 
 async def notify_admins():
