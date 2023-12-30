@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  bot:
+    build: ./bot
+    ports:
+      - "${WEBHOOK_PORT:-1000}:80"
+    environment:
+      - TOKEN=${TOKEN:-5469643644:AAGswk4CVHLOTVx6ZwsVglcKcxkLQeMd030}
+      - ADMINS=${ADMINS:-847721936}
+      - PRODAMUS_URL=${PRODAMUS_URL:-https://testpage7.payform.ru/}
+      - PRODAMUS_TOKEN=${PRODAMUS_TOKEN:-1c00db20d8fc223bce1f407dc1925542db114a76ab62e5afa3714e8fff0cdc78}
+    volumes:
+      - "./bot/:/bot"
