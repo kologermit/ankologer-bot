@@ -9,5 +9,6 @@ services:
       - ADMINS=${ADMINS:-847721936}
       - PRODAMUS_URL=${PRODAMUS_URL:-https://testpage7.payform.ru/}
       - PRODAMUS_TOKEN=${PRODAMUS_TOKEN:-1c00db20d8fc223bce1f407dc1925542db114a76ab62e5afa3714e8fff0cdc78}
+      - PRODAMUS_DEMO_MODE=${PRODAMUS_DEMO_MODE:1}
     volumes:
       - "./bot/:/bot"

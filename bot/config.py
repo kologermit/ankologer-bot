@@ -11,5 +11,5 @@ except:
     prodamus = {
         "token": os.getenv("PRODAMUS_TOKEN", ""),
         "url": os.getenv("PRODAMUS_URL", ""),
-        "demo_mode": 1,
+        "demo_mode": os.getenv("PRODAMUS_DEMO_MODE", "1"),
     }

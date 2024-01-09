@@ -5,7 +5,7 @@ def prodamus_create_url(product: dict, extra: str, user, url):
     data = {
         "do": "link",
         "order_id": product["id"],
-        "demo_mode": 0,
+        "demo_mode": prodamusConf["demo_mode"],
         "customer_extra": extra,
         "currency": "rub",
         "urlSuccess": url,
