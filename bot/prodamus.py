@@ -1,4 +1,4 @@
-import requests
+import requests, logging
 from config import prodamus as prodamusConf
 
 def prodamus_create_url(product: dict, extra: str, user, url):
@@ -16,6 +16,7 @@ def prodamus_create_url(product: dict, extra: str, user, url):
         "_param_product_id": product["id"],
         "payments_limit": "1",
     }
+    logging.info(f"Prodamus data: {data}")
     for key, value in product.items():
         data[f"products[0][{key}]"] = value
     return requests.get(prodamusConf["url"], data).text
