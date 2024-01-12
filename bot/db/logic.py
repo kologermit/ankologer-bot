@@ -16,5 +16,8 @@ async def get_user(m: types.Message) -> Users:
         user = user[0]
     return user
 
+async def get_all_users():
+    return await Users.filter().all()
+
 async def get_products():
     return await Products.filter().all()

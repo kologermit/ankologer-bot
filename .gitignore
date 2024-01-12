@@ -5,3 +5,4 @@ env
 logs
 __pycache__
 *.xlsx*
+tmp/

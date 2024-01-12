@@ -4,7 +4,7 @@ import logging
 from .dispatcher import dp
 from .start import start, start_presentation, menu, menu_markup
 from .registration import registration_name, registration_email, registration_phone
-from .admin import load_products
+from .admin import load_products, mailing
 from .answers import Answers
 from db.models import Users, Messages
 from db.logic import get_user
@@ -25,8 +25,7 @@ async def handler(m: types.Message):
     await m.answer(Answers.Menu.menu, reply_markup=menu_markup)
     await user.save()
 
-@dp.message_handler(content_types=types.ContentTypes.DOCUMENT)
-@dp.message_handler()
+@dp.message_handler(content_types=types.ContentTypes.ANY)
 async def handler(m: types.Message):
     if m.text is not None:
         m.text = m.text.strip().replace("  ", " ").replace("\t", "").replace("\n", "")
@@ -45,6 +44,7 @@ async def handler(m: types.Message):
         "registration:phone": registration_phone,
         "menu": menu,
         "load_products": load_products,
+        "mailing": mailing,
     }
     try:
         if states.get(user.state) is None:

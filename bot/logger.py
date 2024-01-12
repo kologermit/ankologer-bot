@@ -24,10 +24,11 @@ def setup_logger():
     root.addHandler(handler)
 
 def log_message(m: types.Message, state: str = ""):
-    logging.info("Type: Message; Id: {user_id}; Name: {user_name}; Username: @{username}; State: {state}; Text: {text}".format(
+    logging.info("Type: Message; Id: {user_id}; Name: {user_name}; Username: @{username}; State: {state}; Text: {text}; ContentType: {content_type}".format(
         user_id=m.from_user.id,
         user_name=m.from_user.full_name,
         username=m.from_user.username,
         state=state,
-        text=str(m.text)
+        text=str(m.text),
+        content_type=m.content_type
     ))
