@@ -12,3 +12,4 @@ services:
       - PRODAMUS_DEMO_MODE=${PRODAMUS_DEMO_MODE:-1}
     volumes:
       - "./bot/:/bot"
+    mem_limit: "60M"
