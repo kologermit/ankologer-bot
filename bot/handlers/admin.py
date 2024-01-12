@@ -35,7 +35,10 @@ async def callback(c: types.CallbackQuery):
 
 async def mailing_text(u: Users, m: types.Message, users: list[Users]):
     for user in users:
-        await dp.bot.send_message(user.tg_id, m.text)
+        try:
+            await dp.bot.send_message(user.tg_id, m.text)
+        except Exception as err:
+            logging.exception(err)
 
 async def mailing_document(u: Users, m: types.Message, users: list[Users]):
     if not os.path.exists("tmp/"):
@@ -46,7 +49,10 @@ async def mailing_document(u: Users, m: types.Message, users: list[Users]):
     file = await dp.bot.get_file(m.document.file_id)
     await dp.bot.download_file(file.file_path, file_name)
     for user in users:
-        await dp.bot.send_document(user.tg_id, open(file_name, "rb"))
+        try:
+            await dp.bot.send_document(user.tg_id, open(file_name, "rb"))
+        except Exception as err:
+            logging.exception(err)
 
 async def mailing_voice(u: Users, m: types.Message, users: list[Users]):
     if not os.path.exists("tmp/"):
@@ -55,7 +61,10 @@ async def mailing_voice(u: Users, m: types.Message, users: list[Users]):
     file_name = file.name
     file.close()
     for user in users:
-        await dp.bot.send_voice(user.tg_id, open(file_name, "rb"))
+        try:
+            await dp.bot.send_voice(user.tg_id, open(file_name, "rb"))
+        except Exception as err:
+            logging.exception(err)
 
 async def mailing_video_note(u: Users, m: types.Message, users: list[Users]):
     if not os.path.exists("tmp/"):
@@ -64,7 +73,10 @@ async def mailing_video_note(u: Users, m: types.Message, users: list[Users]):
     file_name = file.name
     file.close()
     for user in users:
-        await dp.bot.send_video_note(user.tg_id, open(file_name, "rb"))
+        try:
+            await dp.bot.send_video_note(user.tg_id, open(file_name, "rb"))
+        except Exception as err:
+            logging.exception(err)
 
 async def mailing_photo(u: Users, m: types.Message, users: list[Users]):
     if not os.path.exists("tmp/"):
@@ -73,7 +85,10 @@ async def mailing_photo(u: Users, m: types.Message, users: list[Users]):
     file_name = file.name
     file.close()
     for user in users:
-        await dp.bot.send_photo(user.tg_id, open(file_name, "rb"))
+        try:
+            await dp.bot.send_photo(user.tg_id, open(file_name, "rb"))
+        except Exception as err:
+            logging.exception(err)
 
 async def mailing(u: Users, m: types.Message) -> bool:
     mailing_message = await m.answer("Начинаю отправку")
