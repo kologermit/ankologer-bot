@@ -38,6 +38,7 @@ async def mailing_text(u: Users, m: types.Message, users: list[Users]):
         try:
             await dp.bot.send_message(user.tg_id, m.text)
         except Exception as err:
+            logging.info("User: Id: {id}; Name: {name}".format(id=user.tg_id, name=user.name))
             logging.exception(err)
 
 async def mailing_document(u: Users, m: types.Message, users: list[Users]):
@@ -52,6 +53,7 @@ async def mailing_document(u: Users, m: types.Message, users: list[Users]):
         try:
             await dp.bot.send_document(user.tg_id, open(file_name, "rb"))
         except Exception as err:
+            logging.info("User: Id: {id}; Name: {name}".format(id=user.tg_id, name=user.name))
             logging.exception(err)
 
 async def mailing_voice(u: Users, m: types.Message, users: list[Users]):
@@ -64,6 +66,7 @@ async def mailing_voice(u: Users, m: types.Message, users: list[Users]):
         try:
             await dp.bot.send_voice(user.tg_id, open(file_name, "rb"))
         except Exception as err:
+            logging.info("User: Id: {id}; Name: {name}".format(id=user.tg_id, name=user.name))
             logging.exception(err)
 
 async def mailing_video_note(u: Users, m: types.Message, users: list[Users]):
@@ -76,6 +79,7 @@ async def mailing_video_note(u: Users, m: types.Message, users: list[Users]):
         try:
             await dp.bot.send_video_note(user.tg_id, open(file_name, "rb"))
         except Exception as err:
+            logging.info("User: Id: {id}; Name: {name}".format(id=user.tg_id, name=user.name))
             logging.exception(err)
 
 async def mailing_photo(u: Users, m: types.Message, users: list[Users]):
@@ -88,6 +92,7 @@ async def mailing_photo(u: Users, m: types.Message, users: list[Users]):
         try:
             await dp.bot.send_photo(user.tg_id, open(file_name, "rb"))
         except Exception as err:
+            logging.info("User: Id: {id}; Name: {name}".format(id=user.tg_id, name=user.name))
             logging.exception(err)
 
 async def mailing(u: Users, m: types.Message) -> bool:
