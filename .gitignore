@@ -6,3 +6,4 @@ logs
 __pycache__
 *.xlsx*
 tmp/
+env.py
