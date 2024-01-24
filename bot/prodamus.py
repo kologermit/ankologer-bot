@@ -15,7 +15,7 @@ def prodamus_create_url(product: dict, extra: str, user: types.User, url):
         "_param_user_username": user.username,
         "_param_user_tg_id": user.id,
         "_param_product_id": product["id"],
-        "_params_url_success": url,
+        "_param_url_success": url,
     }
     logging.info(f"Prodamus data: {data}")
     for key, value in product.items():
