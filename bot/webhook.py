@@ -32,6 +32,7 @@ f"""Оплата принята
 Цена: {post.get('sum')}
 Имя: {post.get('products[0][name]')}
 Статус оплаты: {post.get('payment_status')}
+Ссылка: {post.get('_param_url_success')}
 
 Пользователь: {post.get('_param_user_name')}
 Ссылка: @{post.get('_param_user_username')}
