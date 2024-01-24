@@ -25,7 +25,7 @@ async def handle(request: aiohttp.web_request.Request):
 f"""Оплата принята
 Товар: {post.get('products[0][name]')}
 Сумма: {post.get('sum')}
-Ссылка: {post.get('_params_url_success')}""")
+Ссылка: {post.get('_param_url_success')}""")
             for admin in admins:
                 await dp.bot.send_message(admin, f"""Сообщение для админа: Пользователь оплатил товар
 ТоварId: {post.get('_param_product_id')}
