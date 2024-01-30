@@ -61,7 +61,7 @@ async def handler(m: types.Message):
 "Нужны ли какие-то приложения или специальные программы?"
 Показываю разные варианты под смартфон и под компьютер. Вы сами выберете то, что подходит под ваше оборудование. В основном это Телеграм
 
-Остались вопросы? <a href="https://t.me/+jqXOt64xla02ZjJi">СПРОСИТЕ ТУТ</a>""", parse_mode="HTML")
+Остались вопросы? <a href="https://t.me/+jqXOt64xla02ZjJi"><b>СПРОСИТЕ ТУТ</b></a>""", parse_mode="HTML")
             return
         await user.save()
     except Exception as err:
