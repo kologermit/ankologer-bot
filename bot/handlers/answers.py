@@ -43,7 +43,7 @@ class Answers:
         product = "Название: <b>{name}</b>\nЦена: {price}р"
         no_verified = "Вы не зарегистрированы, поэтому не можете купить продукцию"
         menu = "Выберите товар из списка"
-        full = "Название: <b>{name}</b>\n\nОписание: {description}\n\nЦена: {price}"
+        full = "Название: <b>{name}</b>\n\nОписание: {description}\n\nЦена: {price}р"
 
     class Admin:
         menu = "Меню:"
