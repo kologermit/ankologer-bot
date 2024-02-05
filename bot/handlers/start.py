@@ -92,8 +92,8 @@ async def callback(c: types.CallbackQuery):
     await c.message.edit_text(Answers.Products.product.format(
         name=p.name,
         price=p.price
-    ), reply_markup=types.InlineKeyboardMarkup(1).add(
-        types.InlineKeyboardMarkup(text="Посмотреть описание", callback_data="description:more" + str(p.id)),
+    ), reply_markup=types.InlineKeyboardMarkup(2).add(
+        types.InlineKeyboardMarkup(text="Описание", callback_data="description:more" + str(p.id)),
         types.InlineKeyboardButton(text="Купить", callback_data="product:buy" + str(p.id))
     ))
 
