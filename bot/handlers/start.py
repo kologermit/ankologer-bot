@@ -75,7 +75,7 @@ async def callback(c: types.CallbackQuery):
         name=p.name,
         description=p.description,
         price=p.price
-    ), reply_markup=types.InlineKeyboardMarkup(1).add(
+    ), reply_markup=types.InlineKeyboardMarkup(2).add(
         types.InlineKeyboardMarkup(text="Уменьшить", callback_data="description:less" + str(p.id)),
         types.InlineKeyboardButton(text="Купить", callback_data="product:buy" + str(p.id))
     ))
