@@ -55,9 +55,9 @@ async def menu(u: Users, m: types.Message) -> bool:
             await m.answer(Answers.Products.product.format(
                 name=p.name,
                 price=p.price
-            ), reply_markup=types.InlineKeyboardMarkup(1).add(
-                types.InlineKeyboardButton("Посмотреть описание", callback_data="description:more" + str(p.id)),
-                types.InlineKeyboardButton(text="Купить", callback_data="product:buy" + str(p.id))
+            ), reply_markup=types.InlineKeyboardMarkup(2).add(
+                types.InlineKeyboardButton("Описание", callback_data="description:more" + str(p.id)),
+                types.InlineKeyboardButton("Купить", callback_data="product:buy" + str(p.id))
             ))
         return True
     return False

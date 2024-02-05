@@ -40,10 +40,10 @@ class Answers:
         invalid = "Регистрация отменена!❌"
 
     class Products:
-        product = "<b>Название:</b> {name}\n<b>Цена:</b> {price}р"
+        product = "Название: <b>{name}</b>\nЦена: {price}р"
         no_verified = "Вы не зарегистрированы, поэтому не можете купить продукцию"
         menu = "Выберите товар из списка"
-        full = "<b>Название:</b> {name}\n\n<b>Описание:</b> {description}\n\n<b>Цена</b> {price}"
+        full = "Название: <b>{name}</b>\n\nОписание: {description}\n\nЦена: {price}"
 
     class Admin:
         menu = "Меню:"
