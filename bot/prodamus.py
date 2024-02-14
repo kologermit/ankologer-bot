@@ -10,7 +10,6 @@ def prodamus_create_url(product: dict, extra: str, user: types.User, url):
         "customer_extra": extra,
         "currency": "rub",
         "urlSuccess": url,
-        "payments_limit": 1,
         "_param_user_name": user.full_name,
         "_param_user_username": user.username,
         "_param_user_tg_id": user.id,
